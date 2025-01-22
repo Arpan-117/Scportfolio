@@ -22,7 +22,7 @@ function Hero() {
           <div className='basis-1/3 py-40 px-10'>
             <img src={Lawyer} alt='Lawyer' />
           </div>
-
+ {/* Starting with the hero... */}
         </div>
     </>
   )
