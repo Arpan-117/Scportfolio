@@ -1,4 +1,3 @@
-import React from 'react'
 
 function Footer() {
   return (
@@ -7,7 +6,7 @@ function Footer() {
         <div className='flex flex-row'>
 
           <div className='basis-1/3 pt-20'>
-            <p className='font-bold text-xl text-center'>"Your trusted partner in Legal Excellence"</p>
+            <p className='font-bold text-xl text-center'>Your trusted partner in Legal Excellence</p>
           </div>
 
           <div className='basis-1/3 text-center pt-10'>
