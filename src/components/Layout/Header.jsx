@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import  { useState } from 'react'
 
 function Header() {
 
@@ -10,7 +10,7 @@ function Header() {
 
   return (
     <>
-      <nav className='flex top-0 justify-around bg-[#213555] text-[#F5EFE7]'>
+      <nav className='flex top-0 justify-around bg-opacity-85 bg-[#213555] text-[#F5EFE7] backdrop-blur-md'>
 
         <div className=''>
           <h3 className=''>Better Call Sougat</h3>
