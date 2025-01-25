@@ -34,6 +34,18 @@ function Contact() {
 
           </div>
 
+          <div className='grid grid-cols-3 py-14 px-8 text-center bg-[#3E5879] text-[#F5EFE7]'>
+            <div className='px-2'>
+              <p>Email - abc@email.com</p>
+            </div>
+            <div className='px-2'>
+              <p>Office - +91 9876543210</p>
+            </div>
+            <div className='px-2'>
+              <p>Mobile - +91 9876543210</p>
+            </div>
+          </div>
+
         </div>
       </div>
     </>
