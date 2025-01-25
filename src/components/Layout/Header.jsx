@@ -15,6 +15,12 @@ function Header() {
         <div className=''>
           <h3 className=''>Better Call Sougat</h3>
         </div>
+        <div className=''>
+          <h3 className=''>About</h3>
+        </div>
+        <div className=''>
+          <h3 className=''>Services</h3>
+        </div>
 
         <div>
           <button>Schedule a Consultation</button>
