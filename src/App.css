@@ -48,6 +48,9 @@ nav div{
     padding-right: 1rem;
     padding-top: 2rem;
   }
+  .customAbout{
+flex-direction: column;  
+}
  
   body {
     margin: 0;

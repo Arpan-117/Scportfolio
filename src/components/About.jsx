@@ -23,28 +23,15 @@ function About() {
 
             <div className='flex bg-[#F5EFE7] text-[#3E5879] h-screen px-40 justify-center items-center'>
 
-            <div>
+            <div>   
 
                 <h2 className='text-center text-5xl'>About Me</h2>
 
-                <div className='flex flex-row'>
+                <div className='flex flex-row customAbout'>
 
                     <div className='basis-1/2 py-20 px-10'>
                         <img src={Lawyer} alt='Lawyer' />
                     </div>
-
-                    {/* <div className='basis-1/2 py-40 px-10'>
-                        <ul className='text-[#3E5879] text-2xl'>
-                            <br />
-                            <li>Introduction</li>
-                            <br />
-                            <li>Experience</li>
-                            <br />
-                            <li>Details</li>
-                            <br />
-                            <li>Core Values</li>
-                        </ul>
-                    </div> */}
 
                     <div className='basis-1/2 py-40 px-10'>
                     <ul>
@@ -65,10 +52,9 @@ function About() {
 
                 </div>
 
-                </div>
-
             </div>
 
+            </div>
         </>
     )
 }
