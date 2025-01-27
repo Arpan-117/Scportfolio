@@ -6,6 +6,7 @@ import Carousel from './components/Carousel'
 import Services from './components/Services'
 import Blog from './components/Blog'
 import About from './components/About'
+import Contact from './components/Contact'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -18,6 +19,7 @@ function App() {
         <About />
         <Services />
         <Blog />
+        <Contact />
       </Layout>
     </>
   )

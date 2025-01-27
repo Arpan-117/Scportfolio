@@ -3,19 +3,10 @@ import Lawyer from '../assets/Lawyer.png'
 
 function About() {
 
-    const [activeHeading, setActiveHeading] = useState(null);
+    const [activeSection, setActiveSection] = useState(null);
 
-    // Content for each heading
-    const headings = [
-        { id: 'introduction', title: 'Introduction', content: 'This is the introduction content.' },
-        { id: 'experience', title: 'Experience', content: 'This is the experience content.' },
-        { id: 'details', title: 'Details', content: 'This is the details content.' },
-        { id: 'values', title: 'Values', content: 'This is the core values content.' },
-    ];
-
-    // Toggle the active heading
-    const toggleHeading = (id) => {
-        setActiveHeading((prev) => (prev === id ? null : id));
+    const handleSectionClick = (section) => {
+        setActiveSection(section === activeSection ? null : section);
     };
 
     return (
@@ -33,22 +24,41 @@ function About() {
                         <img src={Lawyer} alt='Lawyer' />
                     </div>
 
-                    <div className='basis-1/2 py-40 px-10'>
-                    <ul>
-                    {headings.map((heading) => (
-                        <li key={heading.id}>
-                            {/* Render the heading */}
-                            <h2 className='text-[#3E5879] text-3xl' onClick={() => toggleHeading(heading.id)}>
-                                {heading.title}
-                            </h2>
-                            {/* Render the content if the heading is active */}
-                            {activeHeading === heading.id && (
-                                <p className='text-[#3E5879] text-xl'>{heading.content}</p>
+                        <div className='basis-1/2 py-20 px-10'>
+                            <h2 className='text-[#3E5879] text-3xl py-2' onClick={() => handleSectionClick('Introduction')}>Introduction</h2>
+                            {activeSection === 'Introduction' && (
+                                <div>
+                                    {/* Content for Introduction */}
+                                    <p>This is the introduction content.</p>
+                                </div>
                             )}
-                        </li>
-                    ))}
-                    </ul>
-                    </div>
+
+                            <h2 className='text-[#3E5879] text-3xl py-4' onClick={() => handleSectionClick('Experience')}>Experience</h2>
+                            {activeSection === 'Experience' && (
+                                <div>
+                                    {/* Content for Experience */}
+                                    <p>This is the experience content.</p>
+                                </div>
+                            )}
+
+                            <h2 className='text-[#3E5879] text-3xl py-4' onClick={() => handleSectionClick('Details')}>Details</h2>
+                            {activeSection === 'Details' && (
+                                <div>
+                                    {/* Content for Details */}
+                                    <p>This is the details content.</p>
+                                </div>
+                            )}
+
+                            <h2 className='text-[#3E5879] text-3xl py-4' onClick={() => handleSectionClick('Values')}>Core Values</h2>
+                            {activeSection === 'Values' && (
+                                <div className='grid grid-cols-2 gap-4'>
+                                    {/* Content for Details */}
+                                    <p>- Integrity</p>
+                                    <p>- Client centric approach</p>
+                                    <p>- Precision</p>
+                                </div>
+                            )}
+                        </div>
 
                 </div>
 
