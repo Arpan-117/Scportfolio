@@ -1,10 +1,10 @@
-import React from 'react'
+import 'react'
 
 function Services() {
   return (
     <>
 
-        <div className='bg-[#F5EFE7] h-screen px-40 py-40'>
+        <div id="services" className='bg-[#F5EFE7] h-screen px-40 py-40'>
         
             <h2 className='text-center text-5xl'>Services</h2>
 

@@ -22,3 +22,26 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Git installers and portable versions
+src/assets/Git-*.exe
+src/assets/PortableGit-*.exe
+src/assets/PortableGit-*.7z
+src/assets/PortableGit-*.7z/
+
+# libcurl files
+src/assets/libcurl-*.zip
+src/assets/libcurl-*/
+
+# ngrok files
+src/assets/ngrok-*.zip
+
+#css files
+src/rough.css
+src/context
+src/hooks
+src/context
+
+src/assets/Love_Massage_EP2_-_Streamhb-net.mp4
+src/components/Layout/ScrollToTop.jsx
+src/customJs/

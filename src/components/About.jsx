@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import  { useState } from 'react'
 import Lawyer from '../assets/Lawyer.png'
 
 function About() {
@@ -12,7 +12,7 @@ function About() {
     return (
         <>
 
-            <div className='flex bg-[#F5EFE7] text-[#3E5879] h-screen px-40 justify-center items-center'>
+            <div id="about" className='flex bg-[#F5EFE7] text-[#3E5879] h-screen px-40 justify-center items-center'>
 
             <div>   
 

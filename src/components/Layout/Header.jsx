@@ -1,8 +1,20 @@
-import  { useState } from 'react'
+import  { useState, useEffect } from 'react'
+import { Link, useLocation } from 'react-router-dom';
 
 function Header() {
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    // Check if the URL contains a hash
+    if (location.pathname === '/' && location.hash) {
+      const element = document.getElementById(location.hash.substring(1));
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, [location]);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -13,14 +25,66 @@ function Header() {
       <nav className='flex top-0 justify-around bg-opacity-85 bg-[#213555] text-[#F5EFE7] backdrop-blur-md'>
 
         <div className=''>
-          <h3 className=''>Better Call Sougat</h3>
+          <h3 className=''>
+            <Link to="/" onClick={(e)=>{
+            e.preventDefault();
+            
+            // If we're not on the home page, navigate to home with hash
+            if (location.pathname !== '/') {
+              window.location.href = '/#hero';
+              return;
+            }
+            // If we're on home page, just scroll
+            const element = document.getElementById('hero');
+            if (element) {
+              element.scrollIntoView({ behavior: 'smooth' });
+            }
+          }}>Better Call Sougat</Link></h3>
         </div>
         <div className=''>
-          <h3 className=''>About</h3>
+          <h3 className=''><Link
+            to="/#about"
+            onClick={(e) => {
+              e.preventDefault();
+
+              if (location.pathname !== '/') {
+                window.location.href = '/#about';
+              } else {
+                const element = document.getElementById('about');
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth' });
+                }
+              }
+            }}
+          >
+            About
+          </Link></h3>
         </div>
         <div className=''>
-          <h3 className=''>Services</h3>
+          <h3 className=''><Link
+            to="/#services"
+            onClick={(e) => {
+              e.preventDefault();
+
+              if (location.pathname !== '/') {
+                window.location.href = '/#services';
+              } else {
+                const element = document.getElementById('services');
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth' });
+                }
+              }
+            }}
+          >
+            Services
+          </Link></h3>
         </div>
+
+        <ul>
+          <li>
+            <Link to="/blog">Blogs</Link>
+          </li>
+        </ul>
 
         <div>
           <button>Schedule a Consultation</button>
