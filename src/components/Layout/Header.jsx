@@ -1,4 +1,4 @@
-import  { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom';
 
 function Header() {
@@ -26,23 +26,45 @@ function Header() {
 
         <div className=''>
           <h3 className=''>
-            <Link to="/" onClick={(e)=>{
-            e.preventDefault();
-            
-            // If we're not on the home page, navigate to home with hash
-            if (location.pathname !== '/') {
-              window.location.href = '/#hero';
-              return;
-            }
-            // If we're on home page, just scroll
-            const element = document.getElementById('hero');
-            if (element) {
-              element.scrollIntoView({ behavior: 'smooth' });
-            }
-          }}>Better Call Sougat</Link></h3>
+            <Link to="/" onClick={(e) => {
+              e.preventDefault();
+
+              // If we're not on the home page, navigate to home with hash
+              if (location.pathname !== '/') {
+                window.location.href = '/#hero';
+                return;
+              }
+              // If we're on home page, just scroll
+              const element = document.getElementById('hero');
+              if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}>Better Call Sougat</Link>
+            </h3>
         </div>
+
         <div className=''>
-          <h3 className=''><Link
+          <h3 className=''>
+            <Link to="/" onClick={(e) => {
+              e.preventDefault();
+
+              // If we're not on the home page, navigate to home with hash
+              if (location.pathname !== '/') {
+                window.location.href = '/#hero';
+                return;
+              }
+              // If we're on home page, just scroll
+              const element = document.getElementById('hero');
+              if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}>Home</Link>
+            </h3>
+        </div>
+
+        <div className=''>
+          <h3 className=''>
+          <Link
             to="/#about"
             onClick={(e) => {
               e.preventDefault();
@@ -57,9 +79,11 @@ function Header() {
               }
             }}
           >
-            About
-          </Link></h3>
+            About Me
+          </Link>
+          </h3>
         </div>
+
         <div className=''>
           <h3 className=''><Link
             to="/#services"
@@ -85,6 +109,26 @@ function Header() {
             <Link to="/blog">Blogs</Link>
           </li>
         </ul>
+
+        <div className=''>
+          <h3 className=''><Link
+            to="/#contact"
+            onClick={(e) => {
+              e.preventDefault();
+
+              if (location.pathname !== '/') {
+                window.location.href = '/#contact';
+              } else {
+                const element = document.getElementById('contact');
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth' });
+                }
+              }
+            }}
+          >
+            Contact
+          </Link></h3>
+        </div>
 
         <div>
           <button>Schedule a Consultation</button>
