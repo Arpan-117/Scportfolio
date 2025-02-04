@@ -55,7 +55,6 @@ flex-direction: column;
   body {
     margin: 0;
     padding: 0;
-    overflow: hidden;
   }
   .customHero div div:nth-child(1) p {
   font-family: "Playfair Display", serif;
