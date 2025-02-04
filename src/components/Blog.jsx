@@ -1,6 +1,6 @@
 import 'react'
 import {easeInOut, motion as m} from "framer-motion"
-import { container, item } from '../customJs/AnimationContext';
+import { container, item, item1 } from '../customJs/AnimationContext';
 import LawyerL from '../assets/pexels-sora-shimazaki-5673498.jpg'
 import Client from '../assets/pexels-pavel-danilyuk-8111884.jpg'
 function Blog() {
@@ -8,7 +8,7 @@ function Blog() {
 
   return (
     <>
-        <m.div className='bg-[#E2DFE0] px-40 py-40'
+        <m.div className='bg-[#E2DFE0] py-20 lg:px-28 lg:py-16'
                     initial={{y:'100%'}}
                     animate={{y: '0%'}}
                     exit={{opacity:0}}
@@ -22,30 +22,32 @@ function Blog() {
                 transition={{duration: .75, ease:easeInOut, delay:.75}}>Blogs</m.h2>
             </div>
 
-            <div className='flex flex-row py-20'>
+            <div className='md:flex md:flex-row py-16 px-10 sm:px-8'>
 
-                <m.div className='basis-3/4' variants={container} initial='hidden' animate='show'>
-                    <m.h3 className='text-3xl' variants={item}>Latest Post</m.h3>
+                <m.div className='basis-3/4 md:mr-4' variants={container} initial='hidden' animate='show'>
+                    <div className="overflow-hidden"><m.h3 className='text-3xl' variants={item}>Latest Post</m.h3></div>
                     <br />
-                    <m.img className='w-1/4' src={LawyerL} alt='A Lawyer walking'/>
-                    <m.p variants={item}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</m.p>
+                    <m.img className='sm:w-3/4 md:w-1/2' variants={item} src={LawyerL} alt='A Lawyer walking'/>
+                    <div className="overflow-hidden"><m.p variants={item}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</m.p></div>
                     <br />
-                    <m.img className='w-1/4' variants={item} src={Client} alt='A Lawyer walking'/>
-                    <m.p variants={item}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</m.p>
+                    <m.img className='sm:w-3/4 md:w-1/2' variants={item} src={Client} alt='A Lawyer walking'/>
+                    <div className="overflow-hidden"><m.p variants={item}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</m.p></div>
                 </m.div>
 
-                <div className='basis-1/4'>
-                    <h3 className='text-xl'>Trending News</h3>
-                    <br />
-                    <div className='flex flex-row'>
-                        <div className='basis-1/3'>
-                            <p>An image</p>
-                        </div>
-                        <div className='basis-2/3'>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
-                            </div>
+                <m.div className='basis-1/4 mt-7 md:mt-0' variants={container} initial='hidden' animate='show' exit='exit'>
+                    <div className="overflow-hidden">
+                        <m.h3 className='text-2xl' variants={item1}>Trending News</m.h3>
                     </div>
-                </div>
+                    <br />
+                    <div className='flex md:flex-row flex-row justify-evenly'>
+                        <div className='md:basis-1/2'>
+                            <m.img className='w-32 min-w-28' variants={item1} src='https://i.imgur.com/tCQYbAF.jpg'/>
+                        </div>
+                        <div className='md:basis-1/2 overflow-hidden'>
+                            <m.p className='pl-3' variants={item1}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</m.p>
+                        </div>
+                    </div>
+                </m.div>
             </div>
         </m.div>
     </>
