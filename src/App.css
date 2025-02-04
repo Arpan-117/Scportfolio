@@ -1,11 +1,10 @@
-
- nav{
+nav{
   position: sticky;
   top:0;
   z-index: 10;
  }
 
-nav div{
+nav div, ul{
   padding-bottom:15px;
   padding-top: 12px;
 }
@@ -18,21 +17,22 @@ nav div{
 }
 
 
-.customHero div p:nth-child(1) {
+.customHero div div:nth-child(1) p {
   font-family: "Playfair Display", serif;
   font-optical-sizing: auto;
   font-weight: 400;
+  font-size: 2rem;
   font-style: normal;
-  margin-bottom: 25px;
+  margin-bottom: 0;
 }
 
-.customHero div p:nth-child(2) {
+.customHero div div:nth-child(2) p {
   font-family: "Open Sans", serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
+  margin-top: 20px;
   margin-bottom: 25px;
-
 }
 
 .justOuterImgDiv{
@@ -48,10 +48,14 @@ nav div{
     padding-right: 1rem;
     padding-top: 2rem;
   }
+  .customAbout{
+flex-direction: column;  
+}
  
   body {
     margin: 0;
     padding: 0;
+    overflow: hidden;
   }
   .customHero div div:nth-child(1) p {
   font-family: "Playfair Display", serif;

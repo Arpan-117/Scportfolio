@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import  { useState } from 'react'
 import Lawyer from '../assets/Lawyer.png'
 
 function About() {
@@ -12,13 +12,13 @@ function About() {
     return (
         <>
 
-            <div className='flex bg-[#F5EFE7] text-[#3E5879] h-screen px-40 justify-center items-center'>
+            <div id="about" className='flex bg-[#F5EFE7] text-[#3E5879] h-screen px-40 justify-center items-center'>
 
-            <div>
+            <div>   
 
                 <h2 className='text-center text-5xl'>About Me</h2>
 
-                <div className='flex flex-row'>
+                <div className='flex flex-row customAbout'>
 
                     <div className='basis-1/2 py-20 px-10'>
                         <img src={Lawyer} alt='Lawyer' />
@@ -62,10 +62,9 @@ function About() {
 
                 </div>
 
-                </div>
-
             </div>
 
+            </div>
         </>
     )
 }

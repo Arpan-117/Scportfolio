@@ -1,25 +1,25 @@
-import { useState } from 'react'
 import './App.css'
+import { Routes, Route, useLocation } from 'react-router-dom'
+import Home from './pages/Home'
 import Layout from './components/Layout/Layout'
-import Hero from './components/Hero'
-import Carousel from './components/Carousel'
-import Services from './components/Services'
+import ScrollToTop from './components/Layout/ScrollToTop';
 import Blog from './components/Blog'
-import About from './components/About'
-import Contact from './components/Contact'
+import { AnimatePresence } from 'framer-motion';
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  
+  const location = useLocation();
+  
   return (
     <>
+      <ScrollToTop />
       <Layout>
-        {/* <Carousel /> */}
-        <Hero />
-        <About />
-        <Services />
-        <Blog />
-        <Contact />
+        <AnimatePresence mode="wait">
+          <Routes location={location} key={location.key}>
+            <Route path="/" element={<Home />} />
+            <Route path="/blog" element={<Blog />} />
+          </Routes>
+        </AnimatePresence>
       </Layout>
     </>
   )
