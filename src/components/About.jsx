@@ -1,5 +1,6 @@
 import  { useState } from 'react'
 import Lawyer from '../assets/Lawyer.png'
+import Statue from '../assets/home/about_photo.jpg'
 
 function About() {
 

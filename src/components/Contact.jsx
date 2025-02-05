@@ -3,7 +3,7 @@ import React from 'react'
 function Contact() {
   return (
     <>
-      <div className='flex flex-row bg-[#F5EFE7] text-[#3E5879] h-screen px-40 justify-center items-center'>
+      <div id='contact' className='flex flex-row bg-[#F5EFE7] text-[#3E5879] h-screen px-40 justify-center items-center'>
         <div>
           <h2 className='text-center text-5xl'>Contact Me</h2>
 
@@ -36,13 +36,13 @@ function Contact() {
 
           <div className='grid grid-cols-3 py-14 px-8 text-center bg-[#3E5879] text-[#F5EFE7]'>
             <div className='px-2'>
-              <p>Email - abc@email.com</p>
+              <p>Email : abc@email.com</p>
             </div>
             <div className='px-2'>
-              <p>Office - +91 9876543210</p>
+              <p>Office : 0657-2300301</p>
             </div>
             <div className='px-2'>
-              <p>Mobile - +91 9876543210</p>
+              <p>Mobile : +91-8235278909</p>
             </div>
           </div>
 
