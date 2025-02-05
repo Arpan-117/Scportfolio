@@ -1,3 +1,4 @@
+import { FaLinkedin, FaFacebookSquare, FaInstagramSquare } from "react-icons/fa";
 
 function Footer() {
   return (
@@ -18,10 +19,10 @@ function Footer() {
           </div>
 
           <div className='basis-1/3 pt-20'>
-            <div className='flex flex-row'>
-              <div className='basis-1/3'>LinkedIn</div>
-              <div className='basis-1/3'>Facebook</div>
-              <div className='basis-1/3'>Instagram</div>
+            <div className='flex flex-row text-3xl'>
+              <div className='basis-1/3'><FaLinkedin /></div>
+              <div className='basis-1/3'><FaFacebookSquare /></div>
+              <div className='basis-1/3'><FaInstagramSquare /></div>
             </div>
             <br />
             <button className='bg-[#F5EFE7] text-[#213555] px-10 py-2 rounded-md'>Book a free consultation</button>
