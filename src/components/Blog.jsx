@@ -1,8 +1,6 @@
 import 'react'
 import {easeInOut, motion as m} from "framer-motion"
 import { container, item, item1 } from '../customJs/AnimationContext';
-import LawyerL from '../assets/pexels-sora-shimazaki-5673498.jpg'
-import Client from '../assets/pexels-pavel-danilyuk-8111884.jpg'
 import { useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 
@@ -41,10 +39,10 @@ function Blog() {
                 <m.div className='basis-3/4 md:mr-4' variants={container} initial='hidden' animate='show' exit='exit'>
                     <div className="overflow-hidden"><m.h3 className='text-3xl' variants={item}>Latest Post</m.h3></div>
                     <br />
-                    <m.img className='sm:w-3/4 md:w-1/2' variants={item} src={LawyerL} alt='A Lawyer walking'/>
+                    <m.img className='sm:w-3/4 md:w-1/2' variants={item} src='https://i.imgur.com/xtuW18I.jpg' alt='A Lawyer walking'/>
                     <div className="overflow-hidden"><m.p variants={item}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</m.p></div>
                     <br />
-                    <m.img className='sm:w-3/4 md:w-1/2' variants={item} src={Client} alt='A Lawyer walking'/>
+                    <m.img className='sm:w-3/4 md:w-1/2' variants={item} src='https://i.imgur.com/UZi1wyq.jpg' alt='A Lawyer walking'/>
                     <div className="overflow-hidden"><m.p variants={item}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</m.p></div>
                 </m.div>
 
