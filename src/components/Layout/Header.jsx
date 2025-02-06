@@ -83,8 +83,20 @@ function Header() {
           </li>
         </ul>
 
+        <div className='sm:block hidden'>
+          <h3 className=''><Link
+            to="/#contact"
+            onClick={(e) => {
+              e.preventDefault();
+              handleNavigation('contact');
+            }}
+          >
+            Contact
+          </Link></h3>
+        </div>
+
         <div>
-          <button>Schedule a Consultation</button>
+          <button className='bg-[#3E5879] text-[#F5EFE7] rounded-lg shadow-md shadow-[#F5EFE7] px-4'>Schedule a Consultation</button>
         </div>
 
         <div className="md:hidden">
