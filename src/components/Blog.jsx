@@ -1,36 +1,48 @@
 import 'react'
 import {easeInOut, motion as m} from "framer-motion"
 import { container, item, item1 } from '../customJs/AnimationContext';
-import LawyerL from '../assets/pexels-sora-shimazaki-5673498.jpg'
-import Client from '../assets/pexels-pavel-danilyuk-8111884.jpg'
+import { useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
+
 function Blog() {
     console.log('Blog component rendered'); // Add this line
+    const location = useLocation();
+
+    useEffect(()=>{
+        if(location.hash){
+            window.history.replaceState(null,'',location.pathname);
+        }
+        window.scrollTo(0,0);
+    },[location]);
 
   return (
     <>
         <m.div className='bg-[#E2DFE0] py-20 lg:px-28 lg:py-16'
-                    initial={{y:'100%'}}
+                    initial={{y:'75%'}}
                     animate={{y: '0%'}}
-                    exit={{opacity:0}}
-                    transition={{duration: .85, ease:easeInOut}}>
+                     exit={{
+                        y: '-100%',
+                        transition: { duration: 0.55, ease: "easeInOut" }
+                      }}
+                     transition={{duration: .5, ease:easeInOut}}>
 
             <div className="blogHeader overflow-hidden">
                 <m.h2 className='text-center text-5xl p-2'
                 initial={{y:'100%'}}
                 animate={{y: '0%'}}
-                exit={{opacity:1}}
-                transition={{duration: .75, ease:easeInOut, delay:.75}}>Blogs</m.h2>
+                exit={{opacity:0,}}
+                transition={{duration: .55, ease:easeInOut, delay:.25}}>Blogs</m.h2>
             </div>
 
             <div className='md:flex md:flex-row py-16 px-10 sm:px-8'>
 
-                <m.div className='basis-3/4 md:mr-4' variants={container} initial='hidden' animate='show'>
+                <m.div className='basis-3/4 md:mr-4' variants={container} initial='hidden' animate='show' exit='exit'>
                     <div className="overflow-hidden"><m.h3 className='text-3xl' variants={item}>Latest Post</m.h3></div>
                     <br />
-                    <m.img className='sm:w-3/4 md:w-1/2' variants={item} src={LawyerL} alt='A Lawyer walking'/>
+                    <m.img className='sm:w-3/4 md:w-1/2' variants={item} src='https://i.imgur.com/xtuW18I.jpg' alt='A Lawyer walking'/>
                     <div className="overflow-hidden"><m.p variants={item}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</m.p></div>
                     <br />
-                    <m.img className='sm:w-3/4 md:w-1/2' variants={item} src={Client} alt='A Lawyer walking'/>
+                    <m.img className='sm:w-3/4 md:w-1/2' variants={item} src='https://i.imgur.com/UZi1wyq.jpg' alt='A Lawyer walking'/>
                     <div className="overflow-hidden"><m.p variants={item}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</m.p></div>
                 </m.div>
 

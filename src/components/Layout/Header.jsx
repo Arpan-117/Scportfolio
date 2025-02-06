@@ -1,23 +1,28 @@
-import { useState, useEffect } from 'react'
-import { Link, useLocation } from 'react-router-dom';
+import { useState } from 'react'
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 function Header() {
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
-
-  useEffect(() => {
-    // Check if the URL contains a hash
-    if (location.pathname === '/' && location.hash) {
-      const element = document.getElementById(location.hash.substring(1));
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-  }, [location]);
+  const navigate = useNavigate();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  // A helper function to handle navigation and scroll smoothly
+  const handleNavigation = (hash) => {
+    if (location.pathname === '/') {
+      window.history.pushState(null, '', `/#${hash}`);
+      const element = document.getElementById(hash);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      // Navigate without a full reload
+      navigate(`/#${hash}`);
+    }
   };
 
   return (
@@ -26,104 +31,64 @@ function Header() {
 
         <div className=''>
           <h3 className=''>
-            <Link to="/" onClick={(e) => {
-              e.preventDefault();
-
-              // If we're not on the home page, navigate to home with hash
-              if (location.pathname !== '/') {
-                window.location.href = '/#hero';
-                return;
-              }
-              // If we're on home page, just scroll
-              const element = document.getElementById('hero');
-              if (element) {
-                element.scrollIntoView({ behavior: 'smooth' });
-              }
-            }}>Better Call Sougat</Link>
-            </h3>
-        </div>
-
-        <div className=''>
-          <h3 className=''>
-            <Link to="/" onClick={(e) => {
-              e.preventDefault();
-
-              // If we're not on the home page, navigate to home with hash
-              if (location.pathname !== '/') {
-                window.location.href = '/#hero';
-                return;
-              }
-              // If we're on home page, just scroll
-              const element = document.getElementById('hero');
-              if (element) {
-                element.scrollIntoView({ behavior: 'smooth' });
-              }
-            }}>Home</Link>
-            </h3>
-        </div>
-
-        <div className=''>
-          <h3 className=''>
-          <Link
-            to="/#about"
-            onClick={(e) => {
-              e.preventDefault();
-
-              if (location.pathname !== '/') {
-                window.location.href = '/#about';
-              } else {
-                const element = document.getElementById('about');
-                if (element) {
-                  element.scrollIntoView({ behavior: 'smooth' });
+            <Link
+              to="/"
+              onClick={(e) => {
+                e.preventDefault();
+                if (location.pathname !== '/') {
+                  navigate('/');
+                } else {
+                  // If already on home, scroll to the "hero" section
+                  const element = document.getElementById('hero');
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                  }
                 }
-              }
-            }}
-          >
-            About Me
-          </Link>
+              }}
+            >
+              Better Call Sougat
+            </Link>
+          </h3>
+        </div>
+        <div className='sm:block hidden'>
+          <h3 className=''>
+            <Link
+              to="/#about"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavigation('about');
+              }}
+            >
+              About
+            </Link>
+          </h3>
+        </div>
+        <div className='sm:block hidden'>
+          <h3 className=''>
+            <Link
+              to="/#services"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavigation('services');
+              }}
+            >
+              Services
+            </Link>
           </h3>
         </div>
 
-        <div className=''>
-          <h3 className=''><Link
-            to="/#services"
-            onClick={(e) => {
-              e.preventDefault();
-
-              if (location.pathname !== '/') {
-                window.location.href = '/#services';
-              } else {
-                const element = document.getElementById('services');
-                if (element) {
-                  element.scrollIntoView({ behavior: 'smooth' });
-                }
-              }
-            }}
-          >
-            Services
-          </Link></h3>
-        </div>
-
-        <ul>
+        <ul className='sm:block hidden'>
           <li>
             <Link to="/blog">Blogs</Link>
           </li>
         </ul>
 
-        <div className=''>
+        <div className='sm:block hidden'>
           <h3 className=''><Link
             to="/#contact"
             onClick={(e) => {
               e.preventDefault();
-
-              if (location.pathname !== '/') {
-                window.location.href = '/#contact';
-              } else {
-                const element = document.getElementById('contact');
-                if (element) {
-                  element.scrollIntoView({ behavior: 'smooth' });
-                }
-              }
+              handleNavigation('contact');
             }}
           >
             Contact
@@ -142,7 +107,7 @@ function Header() {
           </button>
         </div>
 
-        <div className={`lg:hidden ${isMenuOpen ? 'block' : 'hidden'}`}>
+        <div className={`md:hidden ${isMenuOpen ? 'block' : 'hidden'}`}>
           <ul>
             <li>
               <p>Home</p>
