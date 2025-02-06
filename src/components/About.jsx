@@ -13,7 +13,7 @@ function About() {
     return (
         <>
 
-            <div id="about" className='flex bg-[#F5EFE7] text-[#3E5879] h-screen px-40 justify-center items-center'>
+            <div id="about" className='flex bg-[#F5EFE7] text-[#3E5879] h-screen px-40 py-40 justify-center items-center'>
 
             <div>   
 

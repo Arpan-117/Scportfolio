@@ -5,6 +5,7 @@ import Layout from './components/Layout/Layout'
 // import ScrollToTop from './components/Layout/ScrollToTop';
 import Blog from './components/Blog'
 import { AnimatePresence } from 'framer-motion';
+import Details from './pages/Details'
 
 function App() {
   
@@ -18,6 +19,7 @@ function App() {
           <Routes location={location} key={location.key}>
             <Route path="/" element={<Home />} />
             <Route path="/blog" element={<Blog />} />
+            <Route path='/consultations' element={<Details />} />
           </Routes>
         </AnimatePresence>
       </Layout>
