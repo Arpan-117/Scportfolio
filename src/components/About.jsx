@@ -1,6 +1,4 @@
 import  { useState } from 'react'
-import Lawyer from '../assets/Lawyer.png'
-import Statue from '../assets/home/about_photo.jpg'
 
 function About() {
 
@@ -13,7 +11,7 @@ function About() {
     return (
         <>
 
-            <div id="about" className='flex bg-[#F5EFE7] text-[#3E5879] h-screen px-40 justify-center items-center'>
+            <div id="about" className='flex bg-[#F5EFE7] text-[#3E5879] pt-28 pb-12 px-12 sm:px-20 md:px-32 justify-center items-center'>
 
             <div>   
 
@@ -21,11 +19,11 @@ function About() {
 
                 <div className='flex flex-row customAbout'>
 
-                    <div className='basis-1/2 py-20 px-10'>
-                        <img src={Lawyer} alt='Lawyer' />
+                    <div className='basis-1/2 py-14 md:py-20 px-10'>
+                        <img src='https://i.imgur.com/uho2JHg.jpg' alt='Lawyer' />
                     </div>
 
-                        <div className='basis-1/2 py-20 px-10'>
+                        <div className='basis-1/2 py-12 md:py-20 px-10'>
                             <h2 className='text-[#3E5879] text-3xl py-2' onClick={() => handleSectionClick('Introduction')}>Introduction</h2>
                             {activeSection === 'Introduction' && (
                                 <div>
