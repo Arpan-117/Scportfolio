@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 function Header() {
@@ -6,9 +6,19 @@ function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
+  const closeMenuRef = useRef(null);
+  const svgRef = useRef(null);
+  const sideMenu = useRef(null);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+    if(svgRef.current.style.display == 'none'){
+      svgRef.current.style.display = 'block'
+      // sideMenu.current.style.right = '0vw';
+    }else{
+      svgRef.current.style.display = 'none'
+      // sideMenu.current.style.right = '0vw';
+    };
   };
 
   // A helper function to handle navigation and scroll smoothly
@@ -95,34 +105,53 @@ function Header() {
           </Link></h3>
         </div>
 
-        <div>
-          <button className='bg-[#3E5879] text-[#F5EFE7] rounded-lg shadow-md shadow-[#F5EFE7] px-4'>Schedule a Consultation</button>
+        <div className='mr-7 sm:mr-0'>
+          <button className='bg-[#3E5879] text-[#F5EFE7] rounded-lg shadow-md shadow-[#F5EFE7] px-1 sm:px-4 mr-1'>Schedule a Consultation</button>
         </div>
 
-        <div className="md:hidden">
+        <div className="sm:hidden fixed right-1">
           <button onClick={toggleMenu}>
-            <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg className="h-6 w-6" ref={svgRef} fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path>
             </svg>
           </button>
         </div>
 
-        <div className={`md:hidden ${isMenuOpen ? 'block' : 'hidden'}`}>
-          <ul>
-            <li>
-              <p>Home</p>
+        <div className={`sm:hidden ${isMenuOpen ? 'block' : 'hidden'} fixed h-screen px-10 py-20 top-0 right-[0vw] bottom-0 bg-[#445570]`} ref={sideMenu}>
+        <button className="absolute top-6 right-6" ref={closeMenuRef} onClick={toggleMenu}>
+          <img 
+            src="https://i.imgur.com/GdNHUTA.png"
+            alt="placeholder"
+            className=" w-5 cursor-pointer"
+          />
+        </button>
+          <ul className='flex flex-col gap-4 '>
+            <li onClick={toggleMenu}><Link to="/#hero"
+            onClick={()=>{
+              handleNavigation('hero');
+            }}>
+              <p>Home</p></Link>
             </li>
-            <li>
-              <p>About Me</p>
+            <li onClick={toggleMenu}><Link to="/#about"
+            onClick={()=>{
+              handleNavigation('about');
+            }}>
+              <p>About Me</p></Link>
             </li>
-            <li>
-              <p>Services</p>
+            <li onClick={toggleMenu}><Link to="/#services"
+            onClick={()=>{
+              handleNavigation('services');
+            }}>
+              <p>Services</p></Link>
             </li>
-            <li>
-              <p>Blog/Insights</p>
+            <li onClick={toggleMenu}><Link to="/blog">
+              <p>Blogs/Insights</p></Link>
             </li>
-            <li>
-              <p>Contact</p>
+            <li onClick={toggleMenu}><Link to="/#contact"
+            onClick={()=>{
+              handleNavigation('contact');
+            }}>
+              <p>Contact</p></Link>
             </li>
           </ul>
         </div>
