@@ -1,9 +1,9 @@
-import React from 'react'
+import 'react'
 
 function Contact() {
   return (
     <>
-      <div id='contact' className='flex flex-row bg-[#F5EFE7] text-[#3E5879] h-screen px-40 justify-center items-center'>
+      <div id='contact' className='flex flex-row bg-[#F5EFE7] text-[#3E5879] px-12 sm:px-40 justify-center items-center'>
         <div>
           <h2 className='text-center text-5xl'>Contact Me</h2>
 
