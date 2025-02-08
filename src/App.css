@@ -108,55 +108,33 @@ flex-direction: column;
   }
 }
 
-@media (min-width: 520px) and (max-width: 767px){
+@media (min-width: 520px) and (max-width: 1024px){
   #services>div{
     grid-template-columns: repeat(2,minmax(0,1fr));
     /* padding-top: 2rem; */
   }}
 
-/* #root {  
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
 
 .card {
-  padding: 2em;
+  border-radius: 30px;
+  background: #e0e0e0;
+  box-shadow: 10px 10px 30px #bebebe,
+             -10px -10px 30px #ffffff;
 }
 
-.read-the-docs {
-  color: #888;
-} */
-
-/* Hero {
-  background-color: blueviolet;
-} */
+.blogHeader+div>div>div>h3,
+.customAbout h2, .serviceCardHeader>h3{
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-size: 2rem;
+  font-style: normal;
+}
+.blogHeader+div>div div>p,
+#about p,
+.serviceCardHeader~p{
+  font-family: "Open Sans", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}

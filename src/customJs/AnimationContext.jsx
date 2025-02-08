@@ -30,4 +30,13 @@ export const item1 = {
     transition: { duration: 0.35, ease:easeInOut } 
   }
 };
+export const item2 = {
+  hidden: {x:'-80%'},
+  show: {x:"0%", transition:{duration: 0.5, ease:easeInOut}},
+  exit: { 
+    opacity: 0, 
+    x: '100%',
+    transition: { duration: 0.35, ease:easeInOut } 
+  }
+};
 
