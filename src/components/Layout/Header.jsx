@@ -76,10 +76,10 @@ function Header() {
         <div className='sm:block hidden'>
           <h3 className=''>
             <Link
-              to="/#services"
+              to="/consultations"
               onClick={(e) => {
-                e.preventDefault();
-                handleNavigation('services');
+                // e.preventDefault();
+                // handleNavigation('services');
               }}
             >
               Services
@@ -106,7 +106,7 @@ function Header() {
         </div>
 
         <div className='mr-7 sm:mr-0'>
-          <button className='bg-[#3E5879] text-[#F5EFE7] rounded-lg shadow-md shadow-[#F5EFE7] px-1 sm:px-4 mr-1'>Schedule a Consultation</button>
+          <Link to="./schedule"><button className='bg-[#3E5879] text-[#F5EFE7] rounded-lg shadow-md shadow-[#F5EFE7] px-1 sm:px-4 mr-1'>Schedule a Consultation</button></Link>
         </div>
 
         <div className="sm:hidden fixed right-1">
@@ -147,7 +147,7 @@ function Header() {
             <li onClick={toggleMenu}><Link to="/blog">
               <p>Blogs/Insights</p></Link>
             </li>
-            <li onClick={toggleMenu}><Link to="/#contact"
+            <li onClick={toggleMenu}><Link to="/schedule"
             onClick={()=>{
               handleNavigation('contact');
             }}>

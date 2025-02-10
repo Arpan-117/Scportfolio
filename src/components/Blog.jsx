@@ -37,7 +37,7 @@ function Blog() {
             <div className='md:flex md:flex-row py-16 px-10 sm:px-8'>
 
                 <m.div className='basis-3/4 md:mr-4' variants={container} initial='hidden' animate='show' exit='exit'>
-                    <div className="overflow-hidden"><m.h3 className='text-3xl' variants={item}>Latest Post</m.h3></div>
+                    <div className="overflow-hidden"><m.h3 className='text-3xl latPost' variants={item}>Latest Post</m.h3></div>
                     <br />
                     <m.img className='sm:w-3/4 md:w-1/2' variants={item} src='https://i.imgur.com/xtuW18I.jpg' alt='A Lawyer walking'/>
                     <div className="overflow-hidden"><m.p variants={item}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</m.p></div>
