@@ -1,33 +1,47 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { format } from "date-fns"
+import {motion as m, easeInOut} from 'framer-motion'
+import { container, item2 } from '../customJs/AnimationContext';
+
 
 function Schedule() {
+
+    useEffect(()=>{
+        if("scrollRestoration" in window.history){
+            window.history.scrollRestoration = 'manual';
+        }
+        window.scrollTo(0,0);
+    },[]);
 
     const [date, setDate] = useState(null);
     const [showCalendar, setShowCalendar] = useState(false);
 
     return (
         <>
-            <div id='contact' className='flex flex-row bg-[#F5EFE7] text-[#3E5879] h-screen px-40 justify-center items-center'>
+            <m.div id='contact' className='flex flex-row bg-[#F5EFE7] text-[#3E5879] md:h-screen px-16 md:px-[144px] justify-center items-center'
+            initial={{y:'85%'}} animate={{y: '0%', transition:{duration: 0.55, ease: "easeInOut"}}} exit={{opacity:0, y:'-80%', transition: { duration: 0.45, ease: easeInOut }}}>
                 <div>
-                    <h2 className='text-center text-5xl'>Schedule a Consultation</h2>
+                    <div className="scheDuleTitle overflow-hidden">
+                        <m.h2 className='text-center text-5xl'
+                        initial={{y:'85%'}} animate={{y: '0%', transition:{duration: 0.55, delay:0.3, ease: "easeInOut"}}} exit={{opacity:0, y:'-80%', transition: { duration: 0.45, ease: easeInOut }}}>Schedule a Consultation</m.h2>
+                    </div>
 
                     <div className='py-14'>
 
-                        <form className='space-y-4'>
+                        <m.form className='space-y-4' variants={container} initial='hidden' animate='show' exit='exit'>
 
-                            <div>
-                                <label htmlFor='name' className='block text-[#3E5879] text-2xl'>Name</label>
+                            <div className='overflow-hidden'>
+                                <m.label htmlFor='name' className='block text-[#3E5879] text-2xl' variants={item2}>Name</m.label>
                                 <input type='text' id='name' name='name' required className='w-full mt-2 py-2 px-4 rounded text-[#3E5879] border bg-white shadow' />
                             </div>
 
-                            <div>
-                                <label htmlFor='phone' className='block text-[#3E5879] text-2xl'>Contact Number</label>
+                            <div className='overflow-hidden'>
+                                <m.label htmlFor='phone' className='block text-[#3E5879] text-2xl' variants={item2}>Contact Number</m.label>
                                 <input id='phone' name='phone' type='tel' required className='w-full mt-2 py-2 px-4 rounded text-[#3E5879] border bg-white shadow' />
                             </div>
 
-                            <div>
-                                <label htmlFor='message' className='block text-[#3E5879] text-2xl'>Query in short</label>
+                            <div className='overflow-hidden'>
+                                <m.label htmlFor='message' variants={item2}className='block text-[#3E5879] text-2xl'>Query in short</m.label>
                                 <textarea id='message' name='message' required className='w-full mt-2 py-2 px-4 rounded text-[#3E5879] border bg-white shadow'></textarea>
                             </div>
 
@@ -56,7 +70,7 @@ function Schedule() {
                             <div>
                                 <button type='submit' className='bg-[#3E5879] text-[#F5EFE7] rounded-lg py-2 px-4'>Send Message</button>
                             </div>
-                        </form>
+                        </m.form>
 
                     </div>
 
@@ -73,7 +87,7 @@ function Schedule() {
                     </div>
 
                 </div>
-            </div>
+            </m.div>
         </>
     )
 }

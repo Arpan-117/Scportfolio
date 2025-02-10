@@ -112,11 +112,12 @@ flex-direction: column;
   #services>div{
     grid-template-columns: repeat(2,minmax(0,1fr));
     /* padding-top: 2rem; */
-  }}
+  }
+}
 
 
 .card {
-  border-radius: 30px;
+  border-radius: .5rem;
   background: #e0e0e0;
   box-shadow: 10px 10px 30px #bebebe,
              -10px -10px 30px #ffffff;
