@@ -1,4 +1,5 @@
 import 'react'
+import { Link, Element } from "react-scroll"
 import Hero from '../components/Hero'
 import About from '../components/About'
 import Services from '../components/Services'
@@ -21,11 +22,30 @@ function Home() {
 
   return (
     <>
-      <Hero />
-      <About />
-      <Services />
-      <Contact />
-    </>
+
+      
+        {/* Right-Side Navigation */}
+        <div className="side-nav">
+          <Link to="hero-sec" smooth={true} duration={800} className="dot" />
+          <Link to="about-sec" smooth={true} duration={800} className="dot" />
+          <Link to="services-sec" smooth={true} duration={800} className="dot" />
+          <Link to="contact-sec" smooth={true} duration={800} className="dot" />
+        </div>
+
+        <Element name="hero-sec" className="section"><Hero /></Element>
+        
+
+        <Element name="about-sec" className="section"><About /></Element>
+        
+
+        <Element name="services-sec" className="section"><Services /></Element>
+        
+
+        <Element name="contact-sec" className="section"><Contact /></Element>
+        
+
+
+      </>
   )
 }
 
