@@ -20,7 +20,7 @@ function Schedule() {
         <>
             <m.div id='contact' className='flex flex-row bg-[#F5EFE7] text-[#3E5879] md:h-screen px-16 md:px-[144px] justify-center items-center'
             initial={{y:'85%'}} animate={{y: '0%', transition:{duration: 0.55, ease: "easeInOut"}}} exit={{opacity:0, y:'-80%', transition: { duration: 0.45, ease: easeInOut }}}>
-                <div>
+                <div className='pb-8'>
                     <div className="scheDuleTitle overflow-hidden">
                         <m.h2 className='text-center text-5xl'
                         initial={{y:'85%'}} animate={{y: '0%', transition:{duration: 0.55, delay:0.3, ease: "easeInOut"}}} exit={{opacity:0, y:'-80%', transition: { duration: 0.45, ease: easeInOut }}}>Schedule a Consultation</m.h2>

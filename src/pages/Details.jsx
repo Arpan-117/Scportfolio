@@ -19,13 +19,13 @@ function Details() {
             <m.div className='flex bg-[#F5EFE7] text-[rgb(62,88,121)] px-[50px] sm:px-[80px] md:px-[100px] lg:px-[144px] py-20 justify-center items-center'
             initial={{y:'78%'}} animate={{y: '0%', transition:{duration: .8, ease: easeInOut}}} exit={{opacity:0, y:'-78%', transition: { duration: 0.35, ease: easeInOut }}}>
 
-                <div >
-                    <div className="overflow-hidden mb-14">
+                <div>
+                    <div className="overflow-hidden mb-8">
                         <m.h2 className='text-center text-5xl'
                      initial={{y:'-100%'}}
                      animate={{y: '0%'}}
                      exit={{opacity:0,}}
-                     transition={{duration: .75,ease: easeInOut, delay:.45}}>Service Details</m.h2>
+                     transition={{duration: .75,ease: easeInOut, delay:.45}}>Services</m.h2>
                     </div>
 
                     <div>
